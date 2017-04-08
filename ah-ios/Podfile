@@ -1,0 +1,41 @@
+# Uncomment the next line to define a global platform for your project
+# platform :ios, '9.0'
+
+target 'ah-ios' do
+  # Uncomment the next line if you're using Swift or would like to use dynamic frameworks
+  # use_frameworks!
+
+  # Pods for ah-ios
+
+  pod 'AFNetworking'
+  pod 'SVProgressHUD'
+  pod 'SDWebImage'
+  pod 'IQDropDownTextField'
+  pod 'VLRTextField'
+  pod 'IQKeyboardManager'
+  pod 'DZNEmptyDataSet'
+  pod 'FBSDKCoreKit'
+  pod 'FBSDKLoginKit'
+  pod 'FBSDKShareKit'
+  pod 'Firebase/Core'
+  pod 'Firebase/Auth'
+  pod 'Firebase/Database'
+  pod 'Google/SignIn'
+  pod 'GooglePlaces'
+  pod 'GooglePlacePicker'
+  pod 'DateTools'
+  pod 'libPhoneNumber-iOS'
+  pod 'EAIntroView'
+  pod 'KWTransition'
+
+  target 'ah-iosTests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+  target 'ah-iosUITests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+end
