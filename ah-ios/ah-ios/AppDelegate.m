@@ -6,7 +6,17 @@
 //  Copyright © 2017 avikantz. All rights reserved.
 //
 
+@import Firebase;
+@import GoogleSignIn;
 #import "AppDelegate.h"
+
+#import <IQKeyboardManager/IQKeyboardManager.h>
+
+#import <FBSDKCoreKit/FBSDKCoreKit.h>
+#import <FBSDKLoginKit/FBSDKLoginKit.h>
+#import <FBSDKLoginKit/FBSDKLoginManager.h>
+
+#import <Google/SignIn.h>
 
 @interface AppDelegate ()
 
@@ -17,6 +27,26 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 	// Override point for customization after application launch.
+	
+	UIStoryboard *storyboard;
+	// If no user
+	storyboard = [UIStoryboard storyboardWithName:@"Login" bundle:nil];
+	// else
+//	storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+	UINavigationController *navc = [storyboard instantiateInitialViewController];
+	self.window.rootViewController = navc;
+	
+	[FIRApp configure];
+	
+	[GIDSignIn sharedInstance].clientID = [FIRApp defaultApp].options.clientID;
+	[GIDSignIn sharedInstance].delegate = self;
+	
+	[[FBSDKApplicationDelegate sharedInstance] application:application didFinishLaunchingWithOptions:launchOptions];
+	
+	[[IQKeyboardManager sharedManager] setEnable:YES];
+	
+	[self customizeColors];
+	
 	return YES;
 }
 
@@ -47,6 +77,61 @@
 	// Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 	// Saves changes in the application's managed object context before the application terminates.
 	[self saveContext];
+}
+
+- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation {
+	BOOL fb_handle = [[FBSDKApplicationDelegate sharedInstance] application:application openURL:url sourceApplication:sourceApplication annotation:annotation];
+	BOOL gg_handle = [[GIDSignIn sharedInstance] handleURL:url sourceApplication:sourceApplication annotation:annotation];
+	return fb_handle || gg_handle;
+}
+
+#pragma mark - GIDSignIn delegate
+
+- (void)signIn:(GIDSignIn *)signIn didSignInForUser:(GIDGoogleUser *)user withError:(NSError *)error {
+	// ...
+	if (error == nil) {
+		GIDAuthentication *authentication = user.authentication;
+		FIRAuthCredential *credential = [FIRGoogleAuthProvider credentialWithIDToken:authentication.idToken accessToken:authentication.accessToken];
+		NSLog(@"Login success for provider %@", credential.provider);
+		// Do something with credential
+	} else {
+		// ...
+	}
+}
+
+- (void)signIn:(GIDSignIn *)signIn
+didDisconnectWithUser:(GIDGoogleUser *)user
+	 withError:(NSError *)error {
+	// Perform any operations when the user disconnects from app here.
+	// ...
+}
+
+- (void)customizeColors {
+	
+	[SVProgressHUD setDefaultMaskType:SVProgressHUDMaskTypeGradient];
+	[SVProgressHUD setBackgroundColor:[UIColor whiteColor]];
+	[SVProgressHUD setForegroundColor:COLOR_DARK_RED];
+	
+	[[UISegmentedControl appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName: [UIColor lightTextColor]} forState:UIControlStateNormal];
+	[[UISegmentedControl appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName: [UIColor lightTextColor]} forState:UIControlStateHighlighted];
+	[[UISegmentedControl appearance] setTintColor:COLOR_PRIMARY_RED];
+	
+	[[UITextField appearance] setTextColor:COLOR_PRIMARY_RED];
+	[[UITextField appearance] setTintColor:COLOR_PRIMARY_RED];
+	
+	[[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName: [UIColor whiteColor]}];
+	
+	[[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
+	[[UINavigationBar appearance] setBarTintColor:COLOR_PRIMARY_RED];
+	
+	[[UITabBar appearance] setTintColor:[UIColor whiteColor]];
+	[[UITabBar appearance] setBarTintColor:COLOR_PRIMARY_RED];
+	
+	[[UITabBarItem appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName: COLOR_LIGHT_RED } forState:UIControlStateNormal];
+	[[UITabBarItem appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName: [UIColor whiteColor]} forState:UIControlStateSelected];
+	
+	[[UIView appearanceWhenContainedInInstancesOfClasses:@[[UITabBar class]]] setTintColor:COLOR_LIGHT_RED];
+	
 }
 
 

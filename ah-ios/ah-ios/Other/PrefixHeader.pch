@@ -1,0 +1,109 @@
+//
+//  PrefixHeader.pch
+//  ah-ios
+//
+//  Created by Avikant Saini on 4/8/17.
+//  Copyright © 2017 avikantz. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#import <SVProgressHUD/SVProgressHUD.h>
+#import <KWTransition/KWTransition.h>
+#import <AFNetworking/AFNetworking.h>
+
+#import "BUser.h"
+#import "ColorsHeader.h"
+
+#import "Utilities.h"
+#import "UIView+ViewUtils.h"
+
+#import "BBTableViewController.h"
+#import "BBViewController.h"
+
+#import "DADataManager.h"
+
+#define kAccessToken @"ACCESS_TOKEN"
+#define kUserID @"USER_ID"
+
+#define NSLog(fmt, ...) printf("\n"); NSLog((@"\n%s ••• \n\t\t" fmt), __PRETTY_FUNCTION__, ##__VA_ARGS__);
+
+#define SCREEN_WIDTH [UIScreen mainScreen].bounds.size.width
+#define SCREEN_HEIGHT [UIScreen mainScreen].bounds.size.height
+
+#define kGoogleSignInNotificationName @"kGoogleSignInNotificationName"
+#define kFacebookSignInNotificationName @"kFacebookSignInNotificationName"
+
+#define kLoadOrderHistoryNotificationName @"kLoadOrderHistoryNotificationName"
+
+#define SVHUD_SHOW dispatch_async(dispatch_get_main_queue(),^{[SVProgressHUD showWithStatus:@"Loading..."];});
+#define SVHUD_HIDE dispatch_async(dispatch_get_main_queue(),^{[SVProgressHUD dismiss];});
+
+#define SVHUD_FAILURE(message) dispatch_async(dispatch_get_main_queue(), ^{ [SVProgressHUD showErrorWithStatus:message]; });
+#define SVHUD_SUCCESS(message) dispatch_async(dispatch_get_main_queue(), ^{ [SVProgressHUD showSuccessWithStatus:message]; });
+
+#define SHOW_ALERT(msg) dispatch_async(dispatch_get_main_queue(), ^{ \
+UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Alert" message:msg preferredStyle:UIAlertControllerStyleAlert]; \
+UIAlertAction *dismissAction = [UIAlertAction actionWithTitle:@"Dismiss" style:UIAlertActionStyleCancel handler:nil]; \
+[alertController addAction:dismissAction]; \
+[self presentViewController:alertController animated:YES completion:nil]; \
+});
+
+#define SHOW_ALERT_2(ttl, msg) dispatch_async(dispatch_get_main_queue(), ^{ \
+UIAlertController *alertController = [UIAlertController alertControllerWithTitle:ttl message:msg preferredStyle:UIAlertControllerStyleAlert]; \
+UIAlertAction *dismissAction = [UIAlertAction actionWithTitle:@"Dismiss" style:UIAlertActionStyleCancel handler:nil]; \
+[alertController addAction:dismissAction]; \
+[self presentViewController:alertController animated:YES completion:nil]; \
+});
+
+#define NSLogError if (error) { NSLog(@"Error: %@", error.localizedDescription); }
+#define NSLogException NSLog(@"Exception: %@", exception.reason);
+
+#define PRINT_ERROR_OR_RESPONSE if (error) { \
+SHOW_ALERT(@"Unable to connect. Pleast try again later"); \
+[SVProgressHUD dismiss];\
+NSLog(@"Error: %@", error.localizedDescription); \
+return; } \
+NSLog(@"Response: %@, Response object: %@", response, responseObject);
+
+#define LOGIN_FAILED_HANDLER dispatch_async(dispatch_get_main_queue(), ^{ \
+UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Login expired" message:@"You need to log in again." preferredStyle:UIAlertControllerStyleAlert]; \
+UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:nil]; \
+[alertController addAction:cancelAction]; \
+UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"Ok" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) { \
+UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Login" bundle:nil]; \
+UIViewController *rootVC = [storyboard instantiateInitialViewController]; \
+[self presentViewController:rootVC animated:YES completion:^{ \
+self.view.window.rootViewController = rootVC; \
+}]; \
+}]; \
+[alertController addAction:okAction]; \
+[self presentViewController:alertController animated:YES completion:nil]; \
+});
+
+#define globalFont20L		[UIFont systemFontOfSize:20 weight: UIFontWeightLight]
+#define globalFont20T		[UIFont systemFontOfSize:20 weight: UIFontWeightThin]
+
+#define globalFont18		[UIFont systemFontOfSize:18 weight: UIFontWeightSemibold]
+
+#define globalFont16		[UIFont systemFontOfSize:16 weight: UIFontWeightRegular]
+#define globalFont16L		[UIFont systemFontOfSize:16 weight: UIFontWeightLight]
+
+#define globalFont14		[UIFont systemFontOfSize:14 weight: UIFontWeightRegular]
+#define globalFont14B		[UIFont systemFontOfSize:14 weight: UIFontWeightSemibold]
+#define globalFont14L		[UIFont systemFontOfSize:14 weight: UIFontWeightLight]
+
+#define globalFont13		[UIFont systemFontOfSize:13 weight: UIFontWeightRegular]
+#define globalFont13B		[UIFont systemFontOfSize:13 weight: UIFontWeightSemibold]
+#define globalFont13L		[UIFont systemFontOfSize:13 weight: UIFontWeightLight]
+
+#define globalFont12		[UIFont systemFontOfSize:12 weight: UIFontWeightRegular]
+#define globalFont12B		[UIFont systemFontOfSize:12 weight: UIFontWeightBold]
+
+#define globalFont10		[UIFont systemFontOfSize:10 weight: UIFontWeightRegular]
+
+#endif /* PrefixHeader_pch */

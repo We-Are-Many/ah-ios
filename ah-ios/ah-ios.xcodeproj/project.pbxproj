@@ -17,6 +17,16 @@
 		594980F01E98F95B005688D2 /* ah_iosTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 594980EF1E98F95B005688D2 /* ah_iosTests.m */; };
 		594980FB1E98F95B005688D2 /* ah_iosUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 594980FA1E98F95B005688D2 /* ah_iosUITests.m */; };
 		594981101E98FB4A005688D2 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5949810E1E98FB4A005688D2 /* Login.storyboard */; };
+		594981241E99020B005688D2 /* BBTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5949811C1E99020B005688D2 /* BBTableViewController.m */; };
+		594981251E99020B005688D2 /* BBViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5949811E1E99020B005688D2 /* BBViewController.m */; };
+		594981261E99020B005688D2 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 594981211E99020B005688D2 /* LoginViewController.m */; };
+		594981271E99020B005688D2 /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 594981231E99020B005688D2 /* RegisterViewController.m */; };
+		5949812D1E990B52005688D2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5949812B1E990B52005688D2 /* GoogleService-Info.plist */; };
+		594981361E990BAF005688D2 /* DADataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 594981311E990BAF005688D2 /* DADataManager.m */; };
+		594981371E990BAF005688D2 /* UIView+ViewUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 594981331E990BAF005688D2 /* UIView+ViewUtils.m */; };
+		594981381E990BAF005688D2 /* Utilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 594981351E990BAF005688D2 /* Utilities.m */; };
+		5949813C1E990C0A005688D2 /* BUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 5949813B1E990C0A005688D2 /* BUser.m */; };
+		5949813F1E991AD8005688D2 /* PickAddictionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5949813E1E991AD8005688D2 /* PickAddictionsViewController.m */; };
 		74F5A2E2CADDF2E7CA7BF502 /* libPods-ah-iosTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FABA7FC6C1E123FEFD866B6C /* libPods-ah-iosTests.a */; };
 		F1082339FC4FD52E86FF6B4C /* libPods-ah-iosUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8562B0EC1F5CD51472677553 /* libPods-ah-iosUITests.a */; };
 /* End PBXBuildFile section */
@@ -58,6 +68,27 @@
 		594980FA1E98F95B005688D2 /* ah_iosUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ah_iosUITests.m; sourceTree = "<group>"; };
 		594980FC1E98F95B005688D2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5949810F1E98FB4A005688D2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Login.storyboard; sourceTree = "<group>"; };
+		5949811B1E99020B005688D2 /* BBTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBTableViewController.h; sourceTree = "<group>"; };
+		5949811C1E99020B005688D2 /* BBTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBTableViewController.m; sourceTree = "<group>"; };
+		5949811D1E99020B005688D2 /* BBViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBViewController.h; sourceTree = "<group>"; };
+		5949811E1E99020B005688D2 /* BBViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBViewController.m; sourceTree = "<group>"; };
+		594981201E99020B005688D2 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		594981211E99020B005688D2 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		594981221E99020B005688D2 /* RegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterViewController.h; sourceTree = "<group>"; };
+		594981231E99020B005688D2 /* RegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterViewController.m; sourceTree = "<group>"; };
+		5949812A1E990B52005688D2 /* ColorsHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ColorsHeader.h; path = Other/ColorsHeader.h; sourceTree = "<group>"; };
+		5949812B1E990B52005688D2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "Other/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		5949812C1E990B52005688D2 /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PrefixHeader.pch; path = Other/PrefixHeader.pch; sourceTree = "<group>"; };
+		594981301E990BAF005688D2 /* DADataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DADataManager.h; sourceTree = "<group>"; };
+		594981311E990BAF005688D2 /* DADataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DADataManager.m; sourceTree = "<group>"; };
+		594981321E990BAF005688D2 /* UIView+ViewUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+ViewUtils.h"; sourceTree = "<group>"; };
+		594981331E990BAF005688D2 /* UIView+ViewUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+ViewUtils.m"; sourceTree = "<group>"; };
+		594981341E990BAF005688D2 /* Utilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utilities.h; sourceTree = "<group>"; };
+		594981351E990BAF005688D2 /* Utilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Utilities.m; sourceTree = "<group>"; };
+		5949813A1E990C0A005688D2 /* BUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BUser.h; sourceTree = "<group>"; };
+		5949813B1E990C0A005688D2 /* BUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BUser.m; sourceTree = "<group>"; };
+		5949813D1E991AD8005688D2 /* PickAddictionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PickAddictionsViewController.h; sourceTree = "<group>"; };
+		5949813E1E991AD8005688D2 /* PickAddictionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PickAddictionsViewController.m; sourceTree = "<group>"; };
 		8562B0EC1F5CD51472677553 /* libPods-ah-iosUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ah-iosUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B14CCDF03DC7EFEA0044598B /* Pods-ah-ios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ah-ios.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ah-ios/Pods-ah-ios.debug.xcconfig"; sourceTree = "<group>"; };
 		D0D2F72A03A6491222EBFD68 /* libPods-ah-ios.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ah-ios.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -142,6 +173,10 @@
 		594980D21E98F95B005688D2 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				5949812E1E990BAF005688D2 /* Utilities */,
+				5949812A1E990B52005688D2 /* ColorsHeader.h */,
+				5949812B1E990B52005688D2 /* GoogleService-Info.plist */,
+				5949812C1E990B52005688D2 /* PrefixHeader.pch */,
 				594980DE1E98F95B005688D2 /* ah_ios.xcdatamodeld */,
 				594980E61E98F95B005688D2 /* Info.plist */,
 				594980D31E98F95B005688D2 /* main.m */,
@@ -170,6 +205,7 @@
 		594981081E98F976005688D2 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				594981391E990C0A005688D2 /* User */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -177,7 +213,8 @@
 		5949810A1E98F97E005688D2 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				594981111E98FB50005688D2 /* Login */,
+				5949811A1E99020B005688D2 /* Base */,
+				5949811F1E99020B005688D2 /* Login */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -209,11 +246,62 @@
 			name = Launch;
 			sourceTree = "<group>";
 		};
-		594981111E98FB50005688D2 /* Login */ = {
+		5949811A1E99020B005688D2 /* Base */ = {
 			isa = PBXGroup;
 			children = (
+				5949811B1E99020B005688D2 /* BBTableViewController.h */,
+				5949811C1E99020B005688D2 /* BBTableViewController.m */,
+				5949811D1E99020B005688D2 /* BBViewController.h */,
+				5949811E1E99020B005688D2 /* BBViewController.m */,
+			);
+			name = Base;
+			path = Controllers/Base;
+			sourceTree = "<group>";
+		};
+		5949811F1E99020B005688D2 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				594981201E99020B005688D2 /* LoginViewController.h */,
+				594981211E99020B005688D2 /* LoginViewController.m */,
+				594981221E99020B005688D2 /* RegisterViewController.h */,
+				594981231E99020B005688D2 /* RegisterViewController.m */,
+				5949813D1E991AD8005688D2 /* PickAddictionsViewController.h */,
+				5949813E1E991AD8005688D2 /* PickAddictionsViewController.m */,
 			);
 			name = Login;
+			path = Controllers/Login;
+			sourceTree = "<group>";
+		};
+		5949812E1E990BAF005688D2 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				5949812F1E990BAF005688D2 /* DADataManager */,
+				594981321E990BAF005688D2 /* UIView+ViewUtils.h */,
+				594981331E990BAF005688D2 /* UIView+ViewUtils.m */,
+				594981341E990BAF005688D2 /* Utilities.h */,
+				594981351E990BAF005688D2 /* Utilities.m */,
+			);
+			name = Utilities;
+			path = Other/Utilities;
+			sourceTree = "<group>";
+		};
+		5949812F1E990BAF005688D2 /* DADataManager */ = {
+			isa = PBXGroup;
+			children = (
+				594981301E990BAF005688D2 /* DADataManager.h */,
+				594981311E990BAF005688D2 /* DADataManager.m */,
+			);
+			path = DADataManager;
+			sourceTree = "<group>";
+		};
+		594981391E990C0A005688D2 /* User */ = {
+			isa = PBXGroup;
+			children = (
+				5949813A1E990C0A005688D2 /* BUser.h */,
+				5949813B1E990C0A005688D2 /* BUser.m */,
+			);
+			name = User;
+			path = Models/User;
 			sourceTree = "<group>";
 		};
 		D7F2A3988307176705896D30 /* Pods */ = {
@@ -349,6 +437,7 @@
 			files = (
 				594981101E98FB4A005688D2 /* Login.storyboard in Resources */,
 				594980E51E98F95B005688D2 /* LaunchScreen.storyboard in Resources */,
+				5949812D1E990B52005688D2 /* GoogleService-Info.plist in Resources */,
 				594980E21E98F95B005688D2 /* Assets.xcassets in Resources */,
 				594980DD1E98F95B005688D2 /* Main.storyboard in Resources */,
 			);
@@ -514,6 +603,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				594980D71E98F95B005688D2 /* AppDelegate.m in Sources */,
+				5949813F1E991AD8005688D2 /* PickAddictionsViewController.m in Sources */,
+				594981241E99020B005688D2 /* BBTableViewController.m in Sources */,
+				594981261E99020B005688D2 /* LoginViewController.m in Sources */,
+				594981251E99020B005688D2 /* BBViewController.m in Sources */,
+				594981381E990BAF005688D2 /* Utilities.m in Sources */,
+				594981361E990BAF005688D2 /* DADataManager.m in Sources */,
+				594981371E990BAF005688D2 /* UIView+ViewUtils.m in Sources */,
+				5949813C1E990C0A005688D2 /* BUser.m in Sources */,
+				594981271E99020B005688D2 /* RegisterViewController.m in Sources */,
 				594980E01E98F95B005688D2 /* ah_ios.xcdatamodeld in Sources */,
 				594980D41E98F95B005688D2 /* main.m in Sources */,
 			);
@@ -674,7 +772,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = HN3SCP8A52;
+				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ah-ios/Other/PrefixHeader.pch";
 				INFOPLIST_FILE = "ah-ios/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.avikantz.ah-ios";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -687,7 +789,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = HN3SCP8A52;
+				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ah-ios/Other/PrefixHeader.pch";
 				INFOPLIST_FILE = "ah-ios/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.avikantz.ah-ios";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -767,6 +873,7 @@
 				594981011E98F95B005688D2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		594981021E98F95B005688D2 /* Build configuration list for PBXNativeTarget "ah-iosTests" */ = {
 			isa = XCConfigurationList;
@@ -775,6 +882,7 @@
 				594981041E98F95B005688D2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		594981051E98F95B005688D2 /* Build configuration list for PBXNativeTarget "ah-iosUITests" */ = {
 			isa = XCConfigurationList;
@@ -783,6 +891,7 @@
 				594981071E98F95B005688D2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

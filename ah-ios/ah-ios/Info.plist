@@ -16,14 +16,63 @@
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
 	<string>1.0</string>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>fb409704946072301</string>
+			</array>
+		</dict>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>com.googleusercontent.apps.290906229649-s3l79a3fsmimt0883uab2muj957tbabf</string>
+			</array>
+		</dict>
+	</array>
 	<key>CFBundleVersion</key>
 	<string>1</string>
+	<key>FacebookAppID</key>
+	<string>409704946072301</string>
+	<key>FacebookDisplayName</key>
+	<string>Mahaaalanobis</string>
+	<key>LSApplicationQueriesSchemes</key>
+	<array>
+		<string>fbapi</string>
+		<string>fb-messenger-api</string>
+		<string>fbauth2</string>
+		<string>fbshareextension</string>
+	</array>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
+	</dict>
+	<key>NSCameraUsageDescription</key>
+	<string>Mahaaalanobis would like to have access to camera.</string>
+	<key>NSContactsUsageDescription</key>
+	<string>Mahaaalanobis would like to have access to your contacts.</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>Mahaaalanobis would like to have access to location services.</string>
+	<key>NSLocationUsageDescription</key>
+	<string>Mahaaalanobis would like to have access to location services.</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Mahaaalanobis would like to have access to location services.</string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>Mahaaalanobis would like to have access to microphone.</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Mahaaalanobis would like to have access to your photo gallery.</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
-	<string>Main</string>
+	<string>Login</string>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
 		<string>armv7</string>
