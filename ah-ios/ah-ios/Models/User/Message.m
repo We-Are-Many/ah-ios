@@ -25,6 +25,7 @@
 	for (NSDictionary *dict in snapshot) {
 		Message *m = [[Message alloc] initWithTo:[dict objectForKey:@"to"] from:[dict objectForKey:@"from"] text:[dict objectForKey:@"text"]];
 		if (([m.to isEqualToString:to] && [m.from isEqualToString:from]) || ([m.to isEqualToString:from] && [m.from isEqualToString:to])) {
+			m.time_stamp = [dict objectForKey:@"time_stamp"];
 			[messages addObject:m];
 		}
 	}

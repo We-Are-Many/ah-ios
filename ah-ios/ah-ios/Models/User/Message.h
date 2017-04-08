@@ -13,6 +13,7 @@
 @property (nonatomic) NSString *to;
 @property (nonatomic) NSString *from;
 @property (nonatomic) NSString *text;
+@property (nonatomic) NSString *time_stamp;
 
 - (instancetype)initWithTo:(NSString *)to from:(NSString *)from text:(NSString *)text;
 

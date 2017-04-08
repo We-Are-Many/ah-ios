@@ -24,6 +24,8 @@
 @property (nonatomic) NSString *help_needed;
 @property (nonatomic) NSString *addiction;
 
+@property (nonatomic) BOOL online;
+
 @property (nonatomic) NSTimeInterval date_created_stamp;
 @property (nonatomic) NSTimeInterval date_modified_stamp;
 

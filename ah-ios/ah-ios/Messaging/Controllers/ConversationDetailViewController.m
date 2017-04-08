@@ -67,6 +67,12 @@
 	self.navigationItem.title = self.person.name;
 
 	self.tableView.rowHeight = UITableViewAutomaticDimension;
+	
+	UIBarButtonItem *moreButton = [[UIBarButtonItem alloc] initWithImage:@"More" style:UIBarButtonItemStylePlain target:self action:@selector(moreAction:)];
+}
+
+- (void)moreAction:(id)sender {
+	
 }
 
 - (void)observeMessages {
@@ -76,10 +82,12 @@
 		NSString *to = self.user.uid;
 		NSString *from = self.person.uid;
 		Message *m = [[Message alloc] initWithTo:[dict objectForKey:@"to"] from:[dict objectForKey:@"from"] text:[dict objectForKey:@"text"]];
+		m.time_stamp = [NSString stringWithFormat:@"%@", [dict objectForKey:@"time_stamp"]];
 		if (([m.to isEqualToString:to] && [m.from isEqualToString:from]) || ([m.to isEqualToString:from] && [m.from isEqualToString:to])) {
 			NSLog(@"Message = %@", dict);
 			[self.messages addObject:m];
 			dispatch_async(dispatch_get_main_queue(), ^{
+				[self.messages sortUsingDescriptors:@[[NSSortDescriptor sortDescriptorWithKey:@"time_stamp" ascending:NO]]];
 				[self.tableView reloadData];
 			});
 		}
@@ -113,6 +121,17 @@
 	if (text.length > 0) {
 		
 		// Append the text or something
+		
+		Message *message = [[Message alloc] initWithTo:self.person.uid from:self.user.uid text:text];
+		message.time_stamp = [NSString stringWithFormat:@"%lf", [NSDate timeIntervalSinceReferenceDate] + NSTimeIntervalSince1970];
+		
+		FIRDatabaseReference *newRef = [self.ref childByAutoId];
+		[newRef setValue:@{
+						   @"to": message.to,
+						   @"from": message.from,
+						   @"text": message.text,
+						   @"time_stamp": message.time_stamp
+						   }];
 	
 	}
 	
@@ -146,6 +165,8 @@
 		cell.messageDirection = OUTGOING;
 	}
 	
+	NSTimeInterval times = message.time_stamp.doubleValue;
+	[cell setDate:[NSDate dateWithTimeIntervalSince1970:times]];
 	
 	cell.senderDisplayText = @"";
 	cell.isMediaItem = NO;

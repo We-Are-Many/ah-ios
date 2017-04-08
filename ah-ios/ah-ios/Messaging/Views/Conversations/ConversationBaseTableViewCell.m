@@ -74,6 +74,7 @@
 
 - (void)setMessageText:(NSString *)text {
 	_messageLabel.text = text;
+//	self.dateLabel.text = @"2s";
 	self.estimatedWidth = [ConversationBaseTableViewCell getEstimatedWidthForText:text];
 }
 

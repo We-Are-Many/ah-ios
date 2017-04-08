@@ -61,7 +61,9 @@
 }
 
 - (IBAction)onSwitchAction:(id)sender {
-	
+	BOOL isOn = [sender isOn];
+	self.shared_user.online = isOn;
+	[[[self.ref child:@"user"] child:self.shared_user.uid] setValue:[NSNumber numberWithBool:isOn] forKey:@"online"];
 }
 
 - (IBAction)moreAction:(id)sender {

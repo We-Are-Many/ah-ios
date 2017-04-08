@@ -133,6 +133,7 @@
 								 if (error == nil) {
 									 NSLog(@"Registration success.");
 									 if ([FIRAuth auth].currentUser) {
+										 
 										 FIRUserProfileChangeRequest *changeRequest =
 										 [[FIRAuth auth].currentUser profileChangeRequest];
 										 changeRequest.displayName = [NSString stringWithFormat:@"%@", self.fullNameField.text];
@@ -191,12 +192,12 @@
 #pragma mark - Navigation
 
 - (IBAction)loginToAccountAction:(id)sender {
-	NSString *userID = self.shared_user.uid;
-	FIRDatabaseReference *userRef = [[self.ref child:@"user"] child:userID];
+	FIRDatabaseReference *userRef = [[self.ref child:@"user"] child:[FIRAuth auth].currentUser.uid];
 	[userRef updateChildValues:@{
-								@"help_needed": self.talkAboutField.text,
-								@"addictions": self.problemsField.selectedItem,
-								}];
+								 @"help_needed": self.talkAboutField.text,
+								 @"addictions": self.problemsField.selectedItem,
+								 @"online": [NSNumber numberWithInteger:1]
+								 }];
 	[self dismissViewControllerAnimated:YES completion:nil];
 }
 

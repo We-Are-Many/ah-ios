@@ -37,6 +37,8 @@
 		self.help_needed = [dict objectForKey:@"help_needed"];
 		self.addiction = [dict objectForKey:@"addiction"];
 		
+		self.online = [[dict objectForKey:@"online"] boolValue];
+		
 		self.date_created_stamp = [[dict objectForKey:@"date_created"] doubleValue];
 		self.date_modified_stamp = [[dict objectForKey:@"date_modified"] doubleValue];
 		
