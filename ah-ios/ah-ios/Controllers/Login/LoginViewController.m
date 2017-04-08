@@ -126,10 +126,10 @@
 		self.tabbarView.hidden = YES;
 		self.navBarView.hidden = YES;
 		UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-		UITabBarController *tabBarVC = [storyboard instantiateInitialViewController];
-		tabBarVC.transitioningDelegate = self;
-		[self presentViewController:tabBarVC animated:YES completion:^{
-			self.view.window.rootViewController = tabBarVC;
+		UINavigationController *navC = [storyboard instantiateInitialViewController];
+		navC.transitioningDelegate = self;
+		[self presentViewController:navC animated:YES completion:^{
+			self.view.window.rootViewController = navC;
 		}];
 	});
 }

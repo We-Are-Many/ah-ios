@@ -21,6 +21,8 @@ blue:((float)(rgbValue & 0xFF))/255.0 alpha:a]
 #define COLOR_GRAY_1		UIColorFromRGBWithAlpha(0x93a6b8, 1.f)
 #define COLOR_GRAY_2		UIColorFromRGBWithAlpha(0x8cd2db, 1.f)
 
+#define COLOR_WHITE			UIColorFromRGBWithAlpha(0xececec, 1.f)
+
 #define COLOR_TEXT_COLOR_1	UIColorFromRGBWithAlpha(0x212121, 1.f)
 #define COLOR_TEXT_COLOR_2	UIColorFromRGBWithAlpha(0x546e7a, 1.f)
 
@@ -28,6 +30,11 @@ blue:((float)(rgbValue & 0xFF))/255.0 alpha:a]
 #define COLOR_YELLOW		UIColorFromRGBWithAlpha(0xffee58, 1.f)
 #define COLOR_SUCCESS		UIColorFromRGBWithAlpha(0x00a650, 1.f)
 #define COLOR_FAILURE		UIColorFromRGBWithAlpha(0xe65100, 1.f)
+
+#define COLOR_LIGHT_GRAY	UIColorFromRGBWithAlpha(0xdedede, 1.f)
+
+#define COLOR_SKY_BLUE		UIColorFromRGBWithAlpha(0x81cfe0, 1.f)
+
 
 #define GLOBAL_BACK_COLOR COLOR_LIGHT_BLUE
 

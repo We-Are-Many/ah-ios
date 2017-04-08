@@ -28,13 +28,13 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 	// Override point for customization after application launch.
 	
-	UIStoryboard *storyboard;
+//	UIStoryboard *storyboard;
 	// If no user
-	storyboard = [UIStoryboard storyboardWithName:@"Login" bundle:nil];
+//	storyboard = [UIStoryboard storyboardWithName:@"Login" bundle:nil];
 	// else
 //	storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-	UINavigationController *navc = [storyboard instantiateInitialViewController];
-	self.window.rootViewController = navc;
+//	UINavigationController *navc = [storyboard instantiateInitialViewController];
+//	self.window.rootViewController = navc;
 	
 	[FIRApp configure];
 	

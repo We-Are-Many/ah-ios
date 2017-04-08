@@ -27,6 +27,19 @@
 		594981381E990BAF005688D2 /* Utilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 594981351E990BAF005688D2 /* Utilities.m */; };
 		5949813C1E990C0A005688D2 /* BUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 5949813B1E990C0A005688D2 /* BUser.m */; };
 		5949813F1E991AD8005688D2 /* PickAddictionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5949813E1E991AD8005688D2 /* PickAddictionsViewController.m */; };
+		594981761E993F0E005688D2 /* AddContactsToGroupTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 594981431E993F0E005688D2 /* AddContactsToGroupTableViewController.m */; };
+		594981791E993F0E005688D2 /* ConversationDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 594981491E993F0E005688D2 /* ConversationDetailViewController.m */; };
+		5949817A1E993F0E005688D2 /* ConversationInfoTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5949814B1E993F0E005688D2 /* ConversationInfoTableViewController.m */; };
+		594981861E993F0E005688D2 /* ContactListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 594981661E993F0E005688D2 /* ContactListTableViewCell.m */; };
+		594981871E993F0E005688D2 /* ContactListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 594981671E993F0E005688D2 /* ContactListTableViewCell.xib */; };
+		594981881E993F0E005688D2 /* ConversationBaseTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5949816A1E993F0E005688D2 /* ConversationBaseTableViewCell.m */; };
+		594981891E993F0E005688D2 /* ConversationBaseTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5949816B1E993F0E005688D2 /* ConversationBaseTableViewCell.xib */; };
+		5949818A1E993F0E005688D2 /* ConversationVideoTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5949816D1E993F0E005688D2 /* ConversationVideoTableViewCell.m */; };
+		5949818B1E993F0E005688D2 /* ConversationVideoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5949816E1E993F0E005688D2 /* ConversationVideoTableViewCell.xib */; };
+		5949818C1E993F0E005688D2 /* TimeReusableHeaderFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 594981701E993F0E005688D2 /* TimeReusableHeaderFooterView.m */; };
+		5949818D1E993F0E005688D2 /* TimeReusableHeaderFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 594981711E993F0E005688D2 /* TimeReusableHeaderFooterView.xib */; };
+		5949818E1E993F0F005688D2 /* MessagingListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 594981741E993F0E005688D2 /* MessagingListTableViewCell.m */; };
+		5949818F1E993F0F005688D2 /* MessagingListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 594981751E993F0E005688D2 /* MessagingListTableViewCell.xib */; };
 		74F5A2E2CADDF2E7CA7BF502 /* libPods-ah-iosTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FABA7FC6C1E123FEFD866B6C /* libPods-ah-iosTests.a */; };
 		F1082339FC4FD52E86FF6B4C /* libPods-ah-iosUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8562B0EC1F5CD51472677553 /* libPods-ah-iosUITests.a */; };
 /* End PBXBuildFile section */
@@ -89,6 +102,27 @@
 		5949813B1E990C0A005688D2 /* BUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BUser.m; sourceTree = "<group>"; };
 		5949813D1E991AD8005688D2 /* PickAddictionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PickAddictionsViewController.h; sourceTree = "<group>"; };
 		5949813E1E991AD8005688D2 /* PickAddictionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PickAddictionsViewController.m; sourceTree = "<group>"; };
+		594981421E993F0E005688D2 /* AddContactsToGroupTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddContactsToGroupTableViewController.h; sourceTree = "<group>"; };
+		594981431E993F0E005688D2 /* AddContactsToGroupTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddContactsToGroupTableViewController.m; sourceTree = "<group>"; };
+		594981481E993F0E005688D2 /* ConversationDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConversationDetailViewController.h; sourceTree = "<group>"; };
+		594981491E993F0E005688D2 /* ConversationDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConversationDetailViewController.m; sourceTree = "<group>"; };
+		5949814A1E993F0E005688D2 /* ConversationInfoTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConversationInfoTableViewController.h; sourceTree = "<group>"; };
+		5949814B1E993F0E005688D2 /* ConversationInfoTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConversationInfoTableViewController.m; sourceTree = "<group>"; };
+		594981651E993F0E005688D2 /* ContactListTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactListTableViewCell.h; sourceTree = "<group>"; };
+		594981661E993F0E005688D2 /* ContactListTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactListTableViewCell.m; sourceTree = "<group>"; };
+		594981671E993F0E005688D2 /* ContactListTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ContactListTableViewCell.xib; sourceTree = "<group>"; };
+		594981691E993F0E005688D2 /* ConversationBaseTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConversationBaseTableViewCell.h; sourceTree = "<group>"; };
+		5949816A1E993F0E005688D2 /* ConversationBaseTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConversationBaseTableViewCell.m; sourceTree = "<group>"; };
+		5949816B1E993F0E005688D2 /* ConversationBaseTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ConversationBaseTableViewCell.xib; sourceTree = "<group>"; };
+		5949816C1E993F0E005688D2 /* ConversationVideoTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConversationVideoTableViewCell.h; sourceTree = "<group>"; };
+		5949816D1E993F0E005688D2 /* ConversationVideoTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConversationVideoTableViewCell.m; sourceTree = "<group>"; };
+		5949816E1E993F0E005688D2 /* ConversationVideoTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ConversationVideoTableViewCell.xib; sourceTree = "<group>"; };
+		5949816F1E993F0E005688D2 /* TimeReusableHeaderFooterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimeReusableHeaderFooterView.h; sourceTree = "<group>"; };
+		594981701E993F0E005688D2 /* TimeReusableHeaderFooterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimeReusableHeaderFooterView.m; sourceTree = "<group>"; };
+		594981711E993F0E005688D2 /* TimeReusableHeaderFooterView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TimeReusableHeaderFooterView.xib; sourceTree = "<group>"; };
+		594981731E993F0E005688D2 /* MessagingListTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessagingListTableViewCell.h; sourceTree = "<group>"; };
+		594981741E993F0E005688D2 /* MessagingListTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessagingListTableViewCell.m; sourceTree = "<group>"; };
+		594981751E993F0E005688D2 /* MessagingListTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MessagingListTableViewCell.xib; sourceTree = "<group>"; };
 		8562B0EC1F5CD51472677553 /* libPods-ah-iosUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ah-iosUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B14CCDF03DC7EFEA0044598B /* Pods-ah-ios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ah-ios.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ah-ios/Pods-ah-ios.debug.xcconfig"; sourceTree = "<group>"; };
 		D0D2F72A03A6491222EBFD68 /* libPods-ah-ios.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ah-ios.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -213,6 +247,7 @@
 		5949810A1E98F97E005688D2 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				594981401E993F0E005688D2 /* Messaging */,
 				5949811A1E99020B005688D2 /* Base */,
 				5949811F1E99020B005688D2 /* Login */,
 			);
@@ -302,6 +337,74 @@
 			);
 			name = User;
 			path = Models/User;
+			sourceTree = "<group>";
+		};
+		594981401E993F0E005688D2 /* Messaging */ = {
+			isa = PBXGroup;
+			children = (
+				594981411E993F0E005688D2 /* Controllers */,
+				594981631E993F0E005688D2 /* Views */,
+			);
+			path = Messaging;
+			sourceTree = "<group>";
+		};
+		594981411E993F0E005688D2 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				594981421E993F0E005688D2 /* AddContactsToGroupTableViewController.h */,
+				594981431E993F0E005688D2 /* AddContactsToGroupTableViewController.m */,
+				594981481E993F0E005688D2 /* ConversationDetailViewController.h */,
+				594981491E993F0E005688D2 /* ConversationDetailViewController.m */,
+				5949814A1E993F0E005688D2 /* ConversationInfoTableViewController.h */,
+				5949814B1E993F0E005688D2 /* ConversationInfoTableViewController.m */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		594981631E993F0E005688D2 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				594981641E993F0E005688D2 /* ContactList */,
+				594981681E993F0E005688D2 /* Conversations */,
+				594981721E993F0E005688D2 /* MessagingList */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		594981641E993F0E005688D2 /* ContactList */ = {
+			isa = PBXGroup;
+			children = (
+				594981651E993F0E005688D2 /* ContactListTableViewCell.h */,
+				594981661E993F0E005688D2 /* ContactListTableViewCell.m */,
+				594981671E993F0E005688D2 /* ContactListTableViewCell.xib */,
+			);
+			path = ContactList;
+			sourceTree = "<group>";
+		};
+		594981681E993F0E005688D2 /* Conversations */ = {
+			isa = PBXGroup;
+			children = (
+				594981691E993F0E005688D2 /* ConversationBaseTableViewCell.h */,
+				5949816A1E993F0E005688D2 /* ConversationBaseTableViewCell.m */,
+				5949816B1E993F0E005688D2 /* ConversationBaseTableViewCell.xib */,
+				5949816C1E993F0E005688D2 /* ConversationVideoTableViewCell.h */,
+				5949816D1E993F0E005688D2 /* ConversationVideoTableViewCell.m */,
+				5949816E1E993F0E005688D2 /* ConversationVideoTableViewCell.xib */,
+				5949816F1E993F0E005688D2 /* TimeReusableHeaderFooterView.h */,
+				594981701E993F0E005688D2 /* TimeReusableHeaderFooterView.m */,
+				594981711E993F0E005688D2 /* TimeReusableHeaderFooterView.xib */,
+			);
+			path = Conversations;
+			sourceTree = "<group>";
+		};
+		594981721E993F0E005688D2 /* MessagingList */ = {
+			isa = PBXGroup;
+			children = (
+				594981731E993F0E005688D2 /* MessagingListTableViewCell.h */,
+				594981741E993F0E005688D2 /* MessagingListTableViewCell.m */,
+				594981751E993F0E005688D2 /* MessagingListTableViewCell.xib */,
+			);
+			path = MessagingList;
 			sourceTree = "<group>";
 		};
 		D7F2A3988307176705896D30 /* Pods */ = {
@@ -435,7 +538,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5949818B1E993F0E005688D2 /* ConversationVideoTableViewCell.xib in Resources */,
+				5949818D1E993F0E005688D2 /* TimeReusableHeaderFooterView.xib in Resources */,
+				5949818F1E993F0F005688D2 /* MessagingListTableViewCell.xib in Resources */,
+				594981871E993F0E005688D2 /* ContactListTableViewCell.xib in Resources */,
 				594981101E98FB4A005688D2 /* Login.storyboard in Resources */,
+				594981891E993F0E005688D2 /* ConversationBaseTableViewCell.xib in Resources */,
 				594980E51E98F95B005688D2 /* LaunchScreen.storyboard in Resources */,
 				5949812D1E990B52005688D2 /* GoogleService-Info.plist in Resources */,
 				594980E21E98F95B005688D2 /* Assets.xcassets in Resources */,
@@ -603,13 +711,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				594980D71E98F95B005688D2 /* AppDelegate.m in Sources */,
+				594981761E993F0E005688D2 /* AddContactsToGroupTableViewController.m in Sources */,
+				594981791E993F0E005688D2 /* ConversationDetailViewController.m in Sources */,
 				5949813F1E991AD8005688D2 /* PickAddictionsViewController.m in Sources */,
+				5949817A1E993F0E005688D2 /* ConversationInfoTableViewController.m in Sources */,
 				594981241E99020B005688D2 /* BBTableViewController.m in Sources */,
 				594981261E99020B005688D2 /* LoginViewController.m in Sources */,
 				594981251E99020B005688D2 /* BBViewController.m in Sources */,
+				594981861E993F0E005688D2 /* ContactListTableViewCell.m in Sources */,
+				5949818C1E993F0E005688D2 /* TimeReusableHeaderFooterView.m in Sources */,
 				594981381E990BAF005688D2 /* Utilities.m in Sources */,
 				594981361E990BAF005688D2 /* DADataManager.m in Sources */,
+				5949818E1E993F0F005688D2 /* MessagingListTableViewCell.m in Sources */,
+				5949818A1E993F0E005688D2 /* ConversationVideoTableViewCell.m in Sources */,
 				594981371E990BAF005688D2 /* UIView+ViewUtils.m in Sources */,
+				594981881E993F0E005688D2 /* ConversationBaseTableViewCell.m in Sources */,
 				5949813C1E990C0A005688D2 /* BUser.m in Sources */,
 				594981271E99020B005688D2 /* RegisterViewController.m in Sources */,
 				594980E01E98F95B005688D2 /* ah_ios.xcdatamodeld in Sources */,

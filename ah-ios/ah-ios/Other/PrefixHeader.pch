@@ -30,6 +30,13 @@
 #define kAccessToken @"ACCESS_TOKEN"
 #define kUserID @"USER_ID"
 
+#define VORIGIN self.bounds.origin
+#define VWIDTH self.bounds.size.width
+#define VHEIGHT	self.bounds.size.height
+
+#define SWidth [UIScreen mainScreen].bounds.size.width
+#define SHeight [UIScreen mainScreen].bounds.size.height
+
 #define NSLog(fmt, ...) printf("\n"); NSLog((@"\n%s ••• \n\t\t" fmt), __PRETTY_FUNCTION__, ##__VA_ARGS__);
 
 #define SCREEN_WIDTH [UIScreen mainScreen].bounds.size.width

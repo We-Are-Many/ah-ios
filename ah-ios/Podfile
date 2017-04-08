@@ -27,6 +27,9 @@ target 'ah-ios' do
   pod 'libPhoneNumber-iOS'
   pod 'EAIntroView'
   pod 'KWTransition'
+  pod 'SlackTextViewController'
+  pod 'JSQMessagesViewController'
+  pod 'NJKScrollFullScreen'
 
   target 'ah-iosTests' do
     inherit! :search_paths

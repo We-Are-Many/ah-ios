@@ -93,12 +93,17 @@ PODS:
   - HTAutocompleteTextField (1.3.2)
   - IQDropDownTextField (1.1.0)
   - IQKeyboardManager (4.0.8)
+  - JSQMessagesViewController (7.3.4):
+    - JSQSystemSoundPlayer (~> 2.0.1)
+  - JSQSystemSoundPlayer (2.0.1)
   - KWTransition (0.0.4)
   - libPhoneNumber-iOS (0.9.2)
+  - NJKScrollFullScreen (0.2.6)
   - PPHelpMe (1.0.2)
   - SDWebImage (4.0.0):
     - SDWebImage/Core (= 4.0.0)
   - SDWebImage/Core (4.0.0)
+  - SlackTextViewController (1.9.5)
   - SVProgressHUD (2.1.2)
   - VLRJVFloatLabeledTextField (1.0.3):
     - HTAutocompleteTextField
@@ -122,9 +127,12 @@ DEPENDENCIES:
   - GooglePlaces
   - IQDropDownTextField
   - IQKeyboardManager
+  - JSQMessagesViewController
   - KWTransition
   - libPhoneNumber-iOS
+  - NJKScrollFullScreen
   - SDWebImage
+  - SlackTextViewController
   - SVProgressHUD
   - VLRTextField
 
@@ -155,14 +163,18 @@ SPEC CHECKSUMS:
   HTAutocompleteTextField: ce809f04875e843e20f214ab973bb496ba7a93b1
   IQDropDownTextField: 614f79ca905529c992045eaa112d0fc9ebb875d1
   IQKeyboardManager: 1a8189fa153bf09044355ee0ad36826f6767e7f7
+  JSQMessagesViewController: 39fed975e3c9f8eba7292071e29eeb541d105e66
+  JSQSystemSoundPlayer: c5850e77a4363ffd374cd851154b9af93264ed8d
   KWTransition: 72d59eef35ddb67769eb99a41317fa75c0444e1b
   libPhoneNumber-iOS: a8bffdec18c37728360f6771fe021302f1e0b497
+  NJKScrollFullScreen: 13e370f935da7385b92779644b31df8d83a91447
   PPHelpMe: 243c40d2fad33ebdcc6b158c0db54893e0cc2d14
   SDWebImage: 76a6348bdc74eb5a55dd08a091ef298e56b55e41
+  SlackTextViewController: fbcdadbb8090673f604484ff5b6eb8d77baed42a
   SVProgressHUD: c404a55d78acbeb7ebb78b76d3faf986475a6994
   VLRJVFloatLabeledTextField: 99a798b5a42a9e58b161453394b84358651d844e
   VLRTextField: 98c5ab15d1f1c928b160b60900d92ff5e48624d7
 
-PODFILE CHECKSUM: 8e5fcb50e05214055449aa302a133127d27eff49
+PODFILE CHECKSUM: b0b577e7d75950ed0f2ecf0b4c4323eceddf2d1e
 
 COCOAPODS: 1.2.0

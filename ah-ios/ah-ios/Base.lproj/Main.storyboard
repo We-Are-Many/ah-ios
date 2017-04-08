@@ -1,11 +1,116 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="oAE-Qp-RvV">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <scenes/>
+    <scenes>
+        <!--Chats-->
+        <scene sceneID="O9e-5t-NlU">
+            <objects>
+                <tableViewController id="NQP-Hr-xrj" customClass="ConversationInfoTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="zoh-yZ-Wgf">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <connections>
+                            <outlet property="dataSource" destination="NQP-Hr-xrj" id="HVQ-qi-cVb"/>
+                            <outlet property="delegate" destination="NQP-Hr-xrj" id="XtX-P9-FY4"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Chats" id="vHp-FR-ff0">
+                        <barButtonItem key="leftBarButtonItem" title="More" id="DtH-df-uvw">
+                            <connections>
+                                <action selector="moreAction:" destination="NQP-Hr-xrj" id="UTS-37-jpu"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="6nU-0d-67R">
+                            <switch key="customView" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" id="NCb-7T-nRe">
+                                <rect key="frame" x="310" y="6" width="51" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="onTintColor" red="0.1333333333" green="0.19215686269999999" blue="0.2470588235" alpha="1" colorSpace="calibratedRGB"/>
+                            </switch>
+                            <color key="tintColor" red="0.13333333333333333" green="0.19215686274509802" blue="0.24705882352941178" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="onSwitchAction:" destination="NQP-Hr-xrj" id="GJb-ee-0AO"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="onSwitch" destination="NCb-7T-nRe" id="i3J-dK-yvB"/>
+                        <segue destination="C9R-Vk-rit" kind="show" identifier="conversationDetailSegue" id="1TX-OM-Ur4">
+                            <nil key="action"/>
+                        </segue>
+                        <segue destination="UgV-Jx-gMX" kind="show" identifier="conversationDetail2Segue" id="Djn-BQ-2rY">
+                            <nil key="action"/>
+                        </segue>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="v5b-p5-Rtc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1596" y="779"/>
+        </scene>
+        <!--Conversation Detail View Controller-->
+        <scene sceneID="MV4-nd-GTR">
+            <objects>
+                <viewController id="C9R-Vk-rit" customClass="ConversationDetailViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="gAA-kd-qta"/>
+                        <viewControllerLayoutGuide type="bottom" id="9or-TN-eff"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Zvn-Aq-J4L">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nCh-72-vQa" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2314" y="778"/>
+        </scene>
+        <!--Conversation Detail2 View Controller-->
+        <scene sceneID="0tb-Ny-YrO">
+            <objects>
+                <viewController storyboardIdentifier="ConversationDetail2VC" id="UgV-Jx-gMX" customClass="ConversationDetail2ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="5rZ-8J-qo9"/>
+                        <viewControllerLayoutGuide type="bottom" id="twf-yT-eRc"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="taz-wm-LT9">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cQl-KQ-pvI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2315" y="1464"/>
+        </scene>
+        <!--Chats-->
+        <scene sceneID="wN4-Tv-qGo">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="oAE-Qp-RvV" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Chats" image="Chat" id="Owx-6d-urk"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="4vh-Px-WZM">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="NQP-Hr-xrj" kind="relationship" relationship="rootViewController" id="oGe-Mz-oa1"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6Aj-lb-pde" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="870" y="779"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Chat" width="16" height="16"/>
+    </resources>
 </document>
