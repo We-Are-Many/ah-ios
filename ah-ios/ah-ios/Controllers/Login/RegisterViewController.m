@@ -191,6 +191,12 @@
 #pragma mark - Navigation
 
 - (IBAction)loginToAccountAction:(id)sender {
+	NSString *userID = self.shared_user.uid;
+	FIRDatabaseReference *userRef = [[self.ref child:@"user"] child:userID];
+	[userRef updateChildValues:@{
+								@"help_needed": self.talkAboutField.text,
+								@"addictions": self.problemsField.selectedItem,
+								}];
 	[self dismissViewControllerAnimated:YES completion:nil];
 }
 

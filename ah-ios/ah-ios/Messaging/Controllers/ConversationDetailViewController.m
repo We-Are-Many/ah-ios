@@ -6,6 +6,11 @@
 //  Copyright © 2016 Chekkoo. All rights reserved.
 //
 
+@import Firebase;
+@import FirebaseDatabase;
+
+#import "Message.h"
+
 #import "ConversationDetailViewController.h"
 
 #import "ConversationBaseTableViewCell.h"
@@ -14,7 +19,11 @@
 
 @interface ConversationDetailViewController ()
 
-@property (strong, nonatomic) NSMutableArray *messages;
+@property (strong, nonatomic) NSMutableArray <Message *> *messages;
+
+@property (nonatomic) BUser *user;
+@property (nonatomic) FIRDatabaseReference *ref;
+
 
 @end
 
@@ -49,9 +58,32 @@
 	
 	self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
 	
-	self.navigationItem.title = @"LOL";
+	self.user = [BUser sharedUser];
+	self.ref = [[FIRDatabase database] referenceWithPath:@"message"];
+	
+	self.messages = [NSMutableArray new];
+	[self observeMessages];
+	
+	self.navigationItem.title = self.person.name;
 
 	self.tableView.rowHeight = UITableViewAutomaticDimension;
+}
+
+- (void)observeMessages {
+	FIRDatabaseQuery *query = [self.ref queryLimitedToLast:25];
+	[query observeEventType:FIRDataEventTypeChildAdded withBlock:^(FIRDataSnapshot * _Nonnull snapshot) {
+		NSDictionary *dict = snapshot.value;
+		NSString *to = self.user.uid;
+		NSString *from = self.person.uid;
+		Message *m = [[Message alloc] initWithTo:[dict objectForKey:@"to"] from:[dict objectForKey:@"from"] text:[dict objectForKey:@"text"]];
+		if (([m.to isEqualToString:to] && [m.from isEqualToString:from]) || ([m.to isEqualToString:from] && [m.from isEqualToString:to])) {
+			NSLog(@"Message = %@", dict);
+			[self.messages addObject:m];
+			dispatch_async(dispatch_get_main_queue(), ^{
+				[self.tableView reloadData];
+			});
+		}
+	}];
 }
 
 - (void)messageReceived:(NSNotification *)notification {
@@ -95,7 +127,7 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-	return 10;
+	return self.messages.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -103,22 +135,22 @@
 	// Customize the cell for types!
 	
 	ConversationBaseTableViewCell *cell = nil;
+
+	Message *message = [self.messages objectAtIndex:indexPath.row];
 	
-	if (indexPath.row % 2 == 0) {
+	if ([message.to isEqualToString:self.user.uid]) {
 		cell = (ConversationBaseTableViewCell *)[tableView dequeueReusableCellWithIdentifier:@"cellOutgoing" forIndexPath:indexPath];
 		cell.messageDirection = INCOMING;
-	} else if (indexPath.row % 2 != 0) {
+	} else  {
 		cell = (ConversationBaseTableViewCell *)[tableView dequeueReusableCellWithIdentifier:@"cellIncoming" forIndexPath:indexPath];
 		cell.messageDirection = OUTGOING;
-	} else {
-		cell = [[ConversationBaseTableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:@"cellStatus"];
-		cell.messageDirection = STATUS;
 	}
+	
 	
 	cell.senderDisplayText = @"";
 	cell.isMediaItem = NO;
 	
-	[cell setMessageText:@"Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor labore et dolore magna aliqua."];
+	[cell setMessageText:message.text];
 	
 	cell.transform = self.tableView.transform; // IMPORTANT: Set cell's transform to the table view's transform
 	

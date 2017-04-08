@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ConversationInfoTableViewController : UITableViewController
+@interface ConversationInfoTableViewController : BBTableViewController
 
 @end

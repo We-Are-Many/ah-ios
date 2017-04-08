@@ -172,6 +172,20 @@
 
 - (IBAction)loginAction:(id)sender {
 	
+	/*
+	if (self.emailField.text.length > 0) {
+		[[FIRAuth auth] signInAnonymouslyWithCompletion:^(FIRUser * _Nullable user, NSError * _Nullable error) {
+			if (user) {
+				NSLog(@"Login success.")
+				[self updateUserDetailsInDatabaseForUser:user];
+			} else {
+				SHOW_ALERT_2(@"Error", error.localizedDescription);
+			}
+		}];
+	}
+	 */
+	
+	
 	if (self.emailField.text.length < 2) {
 		SHOW_ALERT(@"Enter your email to continue.");
 		return;

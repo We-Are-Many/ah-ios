@@ -21,15 +21,8 @@
 
 @property (nonatomic) NSArray <NSString *> *friends;
 
-@property (nonatomic) CGFloat funds_gained;
-@property (nonatomic) CGFloat score;
-@property (nonatomic) NSInteger connections;
-@property (nonatomic) NSInteger total_meetings;
-@property (nonatomic) NSInteger late_meetings;
-
-@property (nonatomic) NSArray <NSString *> *meetings;
-
-@property (nonatomic) NSDictionary <NSString *, NSNumber *> *settings;
+@property (nonatomic) NSString *help_needed;
+@property (nonatomic) NSString *addiction;
 
 @property (nonatomic) NSTimeInterval date_created_stamp;
 @property (nonatomic) NSTimeInterval date_modified_stamp;

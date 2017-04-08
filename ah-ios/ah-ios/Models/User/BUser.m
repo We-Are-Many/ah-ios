@@ -34,18 +34,8 @@
 			self.friends = [friends_object allKeys];
 		}
 		
-		self.funds_gained = [[dict objectForKey:@"funds_gained"] doubleValue];
-		self.score = [[dict objectForKey:@"score"] doubleValue];
-		self.connections = [[dict objectForKey:@"connections"] integerValue];
-		self.total_meetings = [[dict objectForKey:@"total_meetings"] integerValue];
-		self.late_meetings = [[dict objectForKey:@"late_meetings"] integerValue];
-		
-		id meetings_object = [dict objectForKey:@"meetings_object"];
-		if ([meetings_object isKindOfClass:[NSDictionary class]]) {
-			self.meetings = [meetings_object allKeys];
-		}
-		
-		self.settings = [dict objectForKey:@"settings"];
+		self.help_needed = [dict objectForKey:@"help_needed"];
+		self.addiction = [dict objectForKey:@"addiction"];
 		
 		self.date_created_stamp = [[dict objectForKey:@"date_created"] doubleValue];
 		self.date_modified_stamp = [[dict objectForKey:@"date_modified"] doubleValue];

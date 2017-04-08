@@ -40,6 +40,8 @@
 		5949818D1E993F0E005688D2 /* TimeReusableHeaderFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 594981711E993F0E005688D2 /* TimeReusableHeaderFooterView.xib */; };
 		5949818E1E993F0F005688D2 /* MessagingListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 594981741E993F0E005688D2 /* MessagingListTableViewCell.m */; };
 		5949818F1E993F0F005688D2 /* MessagingListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 594981751E993F0E005688D2 /* MessagingListTableViewCell.xib */; };
+		594981921E998BBC005688D2 /* PeopleList.m in Sources */ = {isa = PBXBuildFile; fileRef = 594981911E998BBC005688D2 /* PeopleList.m */; };
+		594981951E99956C005688D2 /* Message.m in Sources */ = {isa = PBXBuildFile; fileRef = 594981941E99956C005688D2 /* Message.m */; };
 		74F5A2E2CADDF2E7CA7BF502 /* libPods-ah-iosTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FABA7FC6C1E123FEFD866B6C /* libPods-ah-iosTests.a */; };
 		F1082339FC4FD52E86FF6B4C /* libPods-ah-iosUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8562B0EC1F5CD51472677553 /* libPods-ah-iosUITests.a */; };
 /* End PBXBuildFile section */
@@ -102,8 +104,8 @@
 		5949813B1E990C0A005688D2 /* BUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BUser.m; sourceTree = "<group>"; };
 		5949813D1E991AD8005688D2 /* PickAddictionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PickAddictionsViewController.h; sourceTree = "<group>"; };
 		5949813E1E991AD8005688D2 /* PickAddictionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PickAddictionsViewController.m; sourceTree = "<group>"; };
-		594981421E993F0E005688D2 /* AddContactsToGroupTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddContactsToGroupTableViewController.h; sourceTree = "<group>"; };
-		594981431E993F0E005688D2 /* AddContactsToGroupTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddContactsToGroupTableViewController.m; sourceTree = "<group>"; };
+		594981421E993F0E005688D2 /* AddContactsToGroupTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AddContactsToGroupTableViewController.h; path = ../Controllers/AddContactsToGroupTableViewController.h; sourceTree = "<group>"; };
+		594981431E993F0E005688D2 /* AddContactsToGroupTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AddContactsToGroupTableViewController.m; path = ../Controllers/AddContactsToGroupTableViewController.m; sourceTree = "<group>"; };
 		594981481E993F0E005688D2 /* ConversationDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConversationDetailViewController.h; sourceTree = "<group>"; };
 		594981491E993F0E005688D2 /* ConversationDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConversationDetailViewController.m; sourceTree = "<group>"; };
 		5949814A1E993F0E005688D2 /* ConversationInfoTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConversationInfoTableViewController.h; sourceTree = "<group>"; };
@@ -123,6 +125,10 @@
 		594981731E993F0E005688D2 /* MessagingListTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessagingListTableViewCell.h; sourceTree = "<group>"; };
 		594981741E993F0E005688D2 /* MessagingListTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessagingListTableViewCell.m; sourceTree = "<group>"; };
 		594981751E993F0E005688D2 /* MessagingListTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MessagingListTableViewCell.xib; sourceTree = "<group>"; };
+		594981901E998BBC005688D2 /* PeopleList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PeopleList.h; sourceTree = "<group>"; };
+		594981911E998BBC005688D2 /* PeopleList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PeopleList.m; sourceTree = "<group>"; };
+		594981931E99956C005688D2 /* Message.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Message.h; sourceTree = "<group>"; };
+		594981941E99956C005688D2 /* Message.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Message.m; sourceTree = "<group>"; };
 		8562B0EC1F5CD51472677553 /* libPods-ah-iosUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ah-iosUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B14CCDF03DC7EFEA0044598B /* Pods-ah-ios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ah-ios.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ah-ios/Pods-ah-ios.debug.xcconfig"; sourceTree = "<group>"; };
 		D0D2F72A03A6491222EBFD68 /* libPods-ah-ios.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ah-ios.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -334,6 +340,10 @@
 			children = (
 				5949813A1E990C0A005688D2 /* BUser.h */,
 				5949813B1E990C0A005688D2 /* BUser.m */,
+				594981901E998BBC005688D2 /* PeopleList.h */,
+				594981911E998BBC005688D2 /* PeopleList.m */,
+				594981931E99956C005688D2 /* Message.h */,
+				594981941E99956C005688D2 /* Message.m */,
 			);
 			name = User;
 			path = Models/User;
@@ -351,12 +361,10 @@
 		594981411E993F0E005688D2 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				594981421E993F0E005688D2 /* AddContactsToGroupTableViewController.h */,
-				594981431E993F0E005688D2 /* AddContactsToGroupTableViewController.m */,
-				594981481E993F0E005688D2 /* ConversationDetailViewController.h */,
-				594981491E993F0E005688D2 /* ConversationDetailViewController.m */,
 				5949814A1E993F0E005688D2 /* ConversationInfoTableViewController.h */,
 				5949814B1E993F0E005688D2 /* ConversationInfoTableViewController.m */,
+				594981481E993F0E005688D2 /* ConversationDetailViewController.h */,
+				594981491E993F0E005688D2 /* ConversationDetailViewController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -364,6 +372,8 @@
 		594981631E993F0E005688D2 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				594981421E993F0E005688D2 /* AddContactsToGroupTableViewController.h */,
+				594981431E993F0E005688D2 /* AddContactsToGroupTableViewController.m */,
 				594981641E993F0E005688D2 /* ContactList */,
 				594981681E993F0E005688D2 /* Conversations */,
 				594981721E993F0E005688D2 /* MessagingList */,
@@ -719,6 +729,7 @@
 				594981261E99020B005688D2 /* LoginViewController.m in Sources */,
 				594981251E99020B005688D2 /* BBViewController.m in Sources */,
 				594981861E993F0E005688D2 /* ContactListTableViewCell.m in Sources */,
+				594981951E99956C005688D2 /* Message.m in Sources */,
 				5949818C1E993F0E005688D2 /* TimeReusableHeaderFooterView.m in Sources */,
 				594981381E990BAF005688D2 /* Utilities.m in Sources */,
 				594981361E990BAF005688D2 /* DADataManager.m in Sources */,
@@ -728,6 +739,7 @@
 				594981881E993F0E005688D2 /* ConversationBaseTableViewCell.m in Sources */,
 				5949813C1E990C0A005688D2 /* BUser.m in Sources */,
 				594981271E99020B005688D2 /* RegisterViewController.m in Sources */,
+				594981921E998BBC005688D2 /* PeopleList.m in Sources */,
 				594980E01E98F95B005688D2 /* ah_ios.xcdatamodeld in Sources */,
 				594980D41E98F95B005688D2 /* main.m in Sources */,
 			);

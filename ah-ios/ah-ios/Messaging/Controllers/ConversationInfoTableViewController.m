@@ -6,12 +6,15 @@
 //  Copyright © 2016 Chekkoo. All rights reserved.
 //
 
+@import Firebase;
+@import FirebaseDatabase;
 
 #import "ConversationInfoTableViewController.h"
 
 #import "ConversationDetailViewController.h"
 
 #import "MessagingListTableViewCell.h"
+#import "PeopleList.h"
 
 @interface ConversationInfoTableViewController () <UISearchResultsUpdating>
 
@@ -22,7 +25,7 @@
 
 @property (nonatomic) UISearchController *searchController;
 
-@property (nonatomic) NSMutableArray *conversations;
+@property (nonatomic) NSMutableArray<PeopleList *> *conversations;
 
 @end
 
@@ -35,6 +38,13 @@
 	self.conversations = [NSMutableArray new];
 	
 	[self.tableView registerNib:[UINib nibWithNibName:@"MessagingListTableViewCell" bundle:nil] forCellReuseIdentifier:@"messagingListCell"];
+	
+	[[self.ref child:@"user"] observeEventType:FIRDataEventTypeValue withBlock:^(FIRDataSnapshot * _Nonnull snapshot) {
+		NSLog(@"Snapshot: %@", snapshot.value);
+		self.conversations = [PeopleList getListFromSnapshot:snapshot.value];
+		[self.tableView reloadData];
+		
+	}];
 	
 }
 
@@ -73,14 +83,15 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-	return 10;
+	return self.conversations.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
 	MessagingListTableViewCell *cell = (MessagingListTableViewCell *)[tableView dequeueReusableCellWithIdentifier:@"messagingListCell" forIndexPath:indexPath];
-	cell.contactNameLabel.text = @"John Reese";
-	cell.messagePreviewLabel.text = @"Sierra Tango Oscar Papa";
-	cell.messageTimeStampLabel.text = @"Yesterday";
+	PeopleList *ppl = [self.conversations objectAtIndex:indexPath.row];
+	cell.contactNameLabel.text = ppl.name;
+	cell.messagePreviewLabel.text = @"...";
+	cell.messageTimeStampLabel.text = @"Online now";
 	cell.unreadLabel.text = @"1";
 //	ConversationMessage *cmessage = [self.conversationMessages objectAtIndex:indexPath.row];
 //	[cell fillUsingMessage:cmessage.lastMessage andDisplayName:cmessage.displayText isGroup:cmessage.isGroupChat];
@@ -138,6 +149,8 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
 	if ([segue.identifier isEqualToString:@"conversationDetailSegue"]) {
 		ConversationDetailViewController *cdvc = [segue destinationViewController];
+		PeopleList *ppl = [self.conversations objectAtIndex:[sender row]];
+		cdvc.person = ppl;
 		cdvc.hidesBottomBarWhenPushed = YES;
 	}
 }
