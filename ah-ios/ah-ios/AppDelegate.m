@@ -8,6 +8,9 @@
 
 @import Firebase;
 @import GoogleSignIn;
+@import GoogleMaps;
+@import GooglePlaces;
+
 #import "AppDelegate.h"
 
 #import <IQKeyboardManager/IQKeyboardManager.h>
@@ -36,10 +39,14 @@
 //	UINavigationController *navc = [storyboard instantiateInitialViewController];
 //	self.window.rootViewController = navc;
 	
+	// Necessary apparently
+	[GMSPlacesClient provideAPIKey:@"AIzaSyCP_780-T3KjL0lFcXcw1EGwjp-0KXMGJI"];
+	[GMSServices provideAPIKey:@"AIzaSyCP_780-T3KjL0lFcXcw1EGwjp-0KXMGJI"];
+	
 	[FIRApp configure];
 	
 	[GIDSignIn sharedInstance].clientID = [FIRApp defaultApp].options.clientID;
-	[GIDSignIn sharedInstance].delegate = self;
+//	[GIDSignIn sharedInstance].delegate = self;
 	
 	[[FBSDKApplicationDelegate sharedInstance] application:application didFinishLaunchingWithOptions:launchOptions];
 	

@@ -43,8 +43,9 @@
 		NSLog(@"Snapshot: %@", snapshot.value);
 		self.conversations = [PeopleList getListFromSnapshot:snapshot.value];
 		[self.tableView reloadData];
-		
 	}];
+	
+	[self onSwitchAction:self.onSwitch];
 	
 }
 
@@ -63,10 +64,12 @@
 - (IBAction)onSwitchAction:(id)sender {
 	BOOL isOn = [sender isOn];
 	self.shared_user.online = isOn;
-	[[[self.ref child:@"user"] child:self.shared_user.uid] setValue:[NSNumber numberWithBool:isOn] forKey:@"online"];
+//	[[[self.ref child:@"user"] child:self.shared_user.uid] setValue:[NSNumber numberWithBool:isOn] forKey:@"online"];
+	
 }
 
 - (IBAction)moreAction:(id)sender {
+	
 }
 
 
@@ -81,19 +84,27 @@
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 1;
+    return 2;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-	return self.conversations.count;
+	if (section == 0)
+		return self.conversations.count;
+	else
+		return MAX(0, self.conversations.count - 1);
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
 	MessagingListTableViewCell *cell = (MessagingListTableViewCell *)[tableView dequeueReusableCellWithIdentifier:@"messagingListCell" forIndexPath:indexPath];
 	PeopleList *ppl = [self.conversations objectAtIndex:indexPath.row];
 	cell.contactNameLabel.text = ppl.name;
-	cell.messagePreviewLabel.text = @"...";
-	cell.messageTimeStampLabel.text = @"Online now";
+	cell.messagePreviewLabel.text = ppl.addiction;
+	if (indexPath.section == 0) {
+		cell.messageTimeStampLabel.text = @"Online now";
+	} else {
+		cell.messageTimeStampLabel.text = @"";
+		cell.contactNameLabel.text = [ppl randomName];
+	}
 	cell.unreadLabel.text = @"1";
 //	ConversationMessage *cmessage = [self.conversationMessages objectAtIndex:indexPath.row];
 //	[cell fillUsingMessage:cmessage.lastMessage andDisplayName:cmessage.displayText isGroup:cmessage.isGroupChat];
@@ -113,6 +124,12 @@
 
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
 	return YES;
+}
+
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+	if (section == 0)
+		return @"Online now";
+	return @"Past connections";
 }
 
 #pragma mark - Scroll view delegate

@@ -131,6 +131,7 @@
 							   password:self.passwordField.text
 							 completion:^(FIRUser * _Nullable user, NSError * _Nullable error) {
 								 if (error == nil) {
+									 SVHUD_HIDE;
 									 NSLog(@"Registration success.");
 									 if ([FIRAuth auth].currentUser) {
 										 
@@ -195,7 +196,7 @@
 	FIRDatabaseReference *userRef = [[self.ref child:@"user"] child:[FIRAuth auth].currentUser.uid];
 	[userRef updateChildValues:@{
 								 @"help_needed": self.talkAboutField.text,
-								 @"addictions": self.problemsField.selectedItem,
+								 @"addiction": self.problemsField.selectedItem,
 								 @"online": [NSNumber numberWithInteger:1]
 								 }];
 	[self dismissViewControllerAnimated:YES completion:nil];

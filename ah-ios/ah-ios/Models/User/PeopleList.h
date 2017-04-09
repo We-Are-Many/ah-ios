@@ -17,6 +17,8 @@
 
 - (instancetype)initWithUID:(NSString *)uid andDict:(NSDictionary *)dict;
 
+- (NSString *)randomName;
+
 + (NSMutableArray <PeopleList *> *)getListFromSnapshot:(NSDictionary *)snapshot;
 
 @end

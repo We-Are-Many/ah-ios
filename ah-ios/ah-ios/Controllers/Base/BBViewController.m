@@ -18,6 +18,9 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
 	
+	NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
+	self.manager = [[AFURLSessionManager alloc] initWithSessionConfiguration:configuration];
+	
 	self.shared_user = [BUser sharedUser];
 	self.ref = [[FIRDatabase database] reference];
 	

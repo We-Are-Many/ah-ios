@@ -10,6 +10,10 @@
 @import FirebaseAuth;
 @import FirebaseDatabase;
 
+#import <GoogleMaps/GoogleMaps.h>
+#import <GooglePlaces/GooglePlaces.h>
+#import <GooglePlacePicker/GooglePlacePicker.h>
+
 #import <VLRTextField/VLRTextField.h>
 #import <VLRTextField/VLRFormService.h>
 
@@ -40,9 +44,19 @@
 
 @property (nonatomic) FIRAuthStateDidChangeListenerHandle handle;
 
+@property (nonatomic) GMSPlacesClient *placesClient;
+@property (nonatomic) GMSPlacePicker *placePicker;
+@property (nonatomic) GMSPlace *place;
+
+@property (nonatomic) CLLocationManager *locationManager;
+
+@property (nonatomic) NSString *locationx;
+
 @end
 
-@implementation LoginViewController
+@implementation LoginViewController {
+	CLGeocoder *geocoder;
+}
 
 - (void)viewDidLoad {
 	
@@ -67,12 +81,37 @@
 		self.navBarView.hidden = YES;
 	}
 	
+	self.placesClient = [GMSPlacesClient sharedClient];
+	
+	self.locationManager = [[CLLocationManager alloc] init];
+	
+	if ([CLLocationManager authorizationStatus] < 3) {
+		[self.locationManager requestAlwaysAuthorization];
+	}
+	
+	self.locationx = @"Manipal";
+	[self geocodeLocation:[self.locationManager location]];
+	
+	
+	
 	// If we want to default google sign in.
 //	[[GIDSignIn sharedInstance] signIn];
 	
 	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleGoogleSignIn:) name:kGoogleSignInNotificationName object:nil];
 	
 	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleFacebookSignIn:) name:FBSDKAccessTokenDidChangeNotification object:nil];
+}
+
+- (void)geocodeLocation:(CLLocation*)location {
+	if (!geocoder)
+		geocoder = [[CLGeocoder alloc] init];
+	[geocoder reverseGeocodeLocation:location completionHandler:
+	 ^(NSArray* placemarks, NSError* error){
+		 if ([placemarks count] > 0) {
+			 CLPlacemark* aPlacemark = [placemarks objectAtIndex:0];
+			 self.locationx = aPlacemark.name;
+		 }
+	 }];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -162,6 +201,13 @@
 			 [[userRef child:@"facebook_id"] setValue:[FBSDKAccessToken currentAccessToken].userID];
 		 }
 		 [shared_user setPropertiesFromDict:snapshot.value];
+		 NSMutableURLRequest *request = [[AFHTTPRequestSerializer serializer]
+										 requestWithMethod:@"POST"
+										 URLString:@"http://45.55.246.90/newuser"
+										 parameters:@{@"user_name": shared_user.uid, @"name": shared_user.full_name, @"email": shared_user.email, @"location": self.locationx, @"talk_points": shared_user.help_needed, @"problem": shared_user.addiction} error:nil];
+		 [[self.manager dataTaskWithRequest:request completionHandler:^(NSURLResponse * _Nonnull response, id  _Nullable responseObject, NSError * _Nullable error) {
+			 PRINT_ERROR_OR_RESPONSE;
+		 }] resume];
 	 }
 	 withCancelBlock:^(NSError * _Nonnull error) {
 		 NSLog(@"Error: %@", error.description);

@@ -20,6 +20,9 @@
 	self.shared_user = [BUser sharedUser];
 	self.ref = [[FIRDatabase database] reference];
 	
+	NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
+	self.manager = [[AFURLSessionManager alloc] initWithSessionConfiguration:configuration];
+	
 	self.transistion = [KWTransition manager];
 	self.transistion.style = KWTransitionStyleFadeBackOver;
 	

@@ -10,11 +10,14 @@
 
 #import <UIKit/UIKit.h>
 #import <KWTransition/KWTransition.h>
+#import <AFNetworking/AFNetworking.h>
 
 @interface BBTableViewController : UITableViewController <UIViewControllerTransitioningDelegate>
 
 @property (nonatomic) BUser *shared_user;
 @property (nonatomic) KWTransition *transistion;
+
+@property (nonatomic) AFURLSessionManager *manager;
 
 @property (nonatomic) FIRDatabaseReference *ref;
 

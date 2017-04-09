@@ -9,6 +9,7 @@
 @import Firebase;
 @import FirebaseDatabase;
 
+#import <AFNetworking/AFNetworking.h>
 #import <UIKit/UIKit.h>
 #import <KWTransition/KWTransition.h>
 
@@ -16,6 +17,8 @@
 
 @property (nonatomic) BUser *shared_user;
 @property (nonatomic) KWTransition *transistion;
+
+@property (nonatomic) AFURLSessionManager *manager;
 
 @property (nonatomic) FIRDatabaseReference *ref;
 

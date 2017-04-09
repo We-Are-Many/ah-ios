@@ -31,6 +31,7 @@ target 'ah-ios' do
   pod 'SlackTextViewController'
   pod 'JSQMessagesViewController'
   pod 'NJKScrollFullScreen'
+  pod 'HCSStarRatingView'
 
   target 'ah-iosTests' do
     inherit! :search_paths
